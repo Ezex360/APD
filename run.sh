@@ -13,6 +13,10 @@ if test $# -lt 1
 then Error
 elif [ "$1" = "compile" ]
 then 
+	if test ! -d ./bin
+	then
+		mkdir bin
+	fi
 	echo "Compilando"
 	javac -d ./bin -cp ./src ./src/automata/*.java ./src/utils/*.java
 elif [ "$1" = "run" ]
